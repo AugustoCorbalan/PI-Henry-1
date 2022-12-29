@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* El root originalmente no estaba creado */
+#root{
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}

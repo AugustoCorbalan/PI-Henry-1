@@ -1,0 +1,32 @@
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-image: url('../Imagenes/3.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.containerButton{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    background-color:#772e81;
+    opacity: 90%;
+    border-radius: 5px ;
+    width: 25rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2.5rem;
+
+}

@@ -1,0 +1,49 @@
+.container{
+    background-color: #202020;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container_title{
+    display:flex;
+    justify-content: center;
+}
+
+.container_img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+
+}
+.imagen{
+    max-width: 75%;
+    border-radius: 6px;
+}
+
+.container_description{
+    padding: 20px;
+    padding-bottom: 30px;
+}
+
+.container_details{
+    padding:20px;
+}
+
+.h1{
+    color:rgb(236, 236, 236);
+}
+
+.h3{
+    padding-bottom: 5px;
+    color:rgb (236, 236, 236);
+}
+
+.h4{
+    color:rgb (236, 236, 236);
+}
+
+.li{
+    color:rgb (236, 236, 236);
+}
