@@ -1,14 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchName } from '../Redux/actions'
-import styles from './nav_bar.module.css';
+import { searchName } from '../../Redux/actions'
+import { NavLink, useLocation } from "react-router-dom";
+import styles from '../cssModules/nav_bar.module.css';
 
 
 const NavBar = (props)=>{
     
     const dispatch= useDispatch();
     const noneVisibiliy= styles.links;
+    const url= useLocation().pathname;
 
     const [visibilityMenu1, setVisibility1] = useState(noneVisibiliy);
     const [visibilityMenu2, setVisibility2] = useState(noneVisibiliy);
@@ -62,7 +64,7 @@ const NavBar = (props)=>{
                 setVisibility4(noneVisibiliy);
                 setVisibility5(styles.linksVisible);
            
-        }else if (menu == "ranking"){    
+        }else if (menu == "rating"){    
                 setVisibility4(noneVisibiliy);
                 setVisibility6(styles.linksVisible);
         }   
@@ -76,15 +78,15 @@ const NavBar = (props)=>{
                         <button className={styles.button_order} onClick={()=>displayMenuOrder("submenu")}>Ordenar</button>
                         <div  className={visibilityMenu4}>
                             <button onClick={()=>displayMenuOrder("alfabet")}> Alfabet. </button>
-                            <button onClick={()=>displayMenuOrder("ranking")}> Ranking </button>
+                            <button onClick={()=>displayMenuOrder("rating")}> Rating </button>
                         </div>
                         <div className={visibilityMenu5}>
-                            <a href="./?alfabetic&ascend">Ascendente</a>
-                            <a href="./?alfabetic&desc">Descendente</a>
+                            <a href={`${url}?alf&asc`}>Ascendente</a>
+                            <a href={`${url}?alf&des`}>Descendente</a>
                         </div>
                         <div className={visibilityMenu6}>
-                            <a href="./?ranking&ascend">Ascendente</a>
-                            <a href="./?ranking&desc">Descendente</a>
+                            <a href={`${url}?rating&asc`}>Ascendente</a>
+                            <a href={`${url}?rating&des`}>Descendente</a>
                         </div>
                     </div>
                 </div>
@@ -97,6 +99,12 @@ const NavBar = (props)=>{
                 </div>
 
                 <div className={styles.div3}>
+                    <div className={styles.div3_1}>
+                        <NavLink to='/create' className={styles.button_create}>Crear</NavLink>
+                    </div>
+
+                    <div className={styles.div3_2}>
+
                     <div className={styles.desplegable}>
                         <button className={styles.button_filter} onClick={()=>displayMenuFilters("submenu")}>Filtros</button>
                         <div  className={visibilityMenu1}>
@@ -117,6 +125,8 @@ const NavBar = (props)=>{
                             <a href="/videogames/api"> API </a>
                             <a href="/videogames/db"> Base de Datos </a>
                         </div>
+
+                    </div>
                     </div>
                 </div>
             </nav>

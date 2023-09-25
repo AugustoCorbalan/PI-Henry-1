@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Card from "./Card";
-import styles from "./PaginatedCards.module.css"
+import styles from "../cssModules/PaginatedCards.module.css"
 
 
 const PaginatedCards= (props)=>{

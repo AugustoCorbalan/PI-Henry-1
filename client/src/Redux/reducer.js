@@ -1,9 +1,10 @@
-import { GET_VIDEOGAMES, GET_DETAILVIDEOGAME, CLEAN_DETAIL, SEARCH_NAME } from './actions.js';
+import { GET_VIDEOGAMES, POST_VIDEOGAMES, GET_DETAILVIDEOGAME, CLEAN_DETAIL, SEARCH_NAME, GET_GENRES } from './actions.js';
 
 
 const initialState={
     videogames: [],
     details: {},
+    genres:[],
     searchName: "",
 };
 
@@ -14,6 +15,14 @@ const rootReducer= (state= initialState, action)=>{
             return{
                 ...state,
                 videogames: action.payload
+            }
+        case POST_VIDEOGAMES:
+            console.log("PostVideogames")
+            return
+        case GET_GENRES:
+            return{
+                ...state,
+                genres: action.payload
             }
         case GET_DETAILVIDEOGAME:
             return{

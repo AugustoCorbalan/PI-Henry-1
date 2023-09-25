@@ -2,9 +2,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getDetailVideogames, cleanDetail } from '../Redux/actions';
+import { getDetailVideogames, cleanDetail } from '../../Redux/actions';
 
-import style from './Details.module.css';
+import style from '../cssModules/Details.module.css';
 
 const Details = (props)=>{
     const {id}= useParams();

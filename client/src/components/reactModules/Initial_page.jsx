@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './initial_page.module.css'
+import styles from '../cssModules/initial_page.module.css'
 
 const Initial_page= (props)=>{
     return(

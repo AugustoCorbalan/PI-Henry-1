@@ -1,10 +1,10 @@
 import './App.css';
 import { Route } from 'react-router-dom';
 import React from 'react';
-import Initial_page  from './components/Initial_page';
-import Home from "./components/Home";
-import Create from './components/Create';
-import Details from './components/Details';
+import Initial_page  from './components/reactModules/Initial_page';
+import Home from "./components/reactModules/Home";
+import Create from './components/reactModules/CreateVideogames/Create';
+import Details from './components/reactModules/Details';
 
 function App() {
   return (
@@ -12,10 +12,9 @@ function App() {
       <Route exact path='/'>
         <Initial_page/>
       </Route>
-      <Route exact path='/videogames/:genre' component={Home}/>
+      <Route exact path='/videogames/:genre' render={({location})=><Home location={location}/>}/>
       <Route exact path='/detail/:id' component={Details}/>
-      <Route exact path='/create'>
-        <Create/>
+      <Route exact path='/create' component={Create}>
       </Route>
     </div>
   );
