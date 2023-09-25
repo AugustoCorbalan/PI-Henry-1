@@ -1,9 +1,11 @@
 const axios= require('axios');
 const {Videogame, Genres} = require('../db.js');
+require('dotenv').config();
+const { API_KEY } = process.env;
 
 const searchByIdAPI= async (id)=>{
     console.log(id);
-    const apiUrl= await axios.get(`https://api.rawg.io/api/games/${id}?key=81ac20443212457186678c9a04d326c3`)
+    const apiUrl= await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
     const apiInfo= await apiUrl.data
     if(parseInt(apiInfo.id) === parseInt(id)){
         const result={

@@ -2,10 +2,10 @@ const {Videogame, Genres} = require('../db.js');
 
 
 
-const createVideogame = async(name, description, date, raiting, platforms, genre)=>{
+const createVideogame = async(name, description, date, rating, platforms, genre)=>{
     try {
-        console.log(name, description, date, raiting, platforms);
-        const videogameCreated= await Videogame.create({name, description, date, raiting, platforms});
+        console.log("createVideogame");
+        const videogameCreated= await Videogame.create({name, description, date, rating, platforms});
         
         let genresDb= await Genres.findAll({
             where: {name: genre}

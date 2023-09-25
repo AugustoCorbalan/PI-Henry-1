@@ -40,8 +40,11 @@ router.get("/:id", async (req,res)=>{
 });
 
 router.post("/", async(req,res)=>{
-    const {name, description, date, raiting, platforms, genre} = req.body;
-
+    const {data}= req.body
+    console.log(data);
+    const datajs= JSON.parse(data);
+    const {name, description, date, rating, platforms, genre} = datajs;
+    console.log(name,rating);
     if(name && description && platforms){
         try {
            const videoGame = await createVideogame(name, description, date, raiting, platforms, genre);
