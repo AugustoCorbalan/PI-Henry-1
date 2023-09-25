@@ -5,6 +5,9 @@ import Initial_page  from './components/reactModules/Initial_page';
 import Home from "./components/reactModules/Home";
 import Create from './components/reactModules/CreateVideogames/Create';
 import Details from './components/reactModules/Details';
+import axios from 'axios';
+
+axios.defaults.baseURL= "http://localhost:3001";
 
 function App() {
   return (

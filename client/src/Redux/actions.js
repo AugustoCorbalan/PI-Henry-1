@@ -9,7 +9,7 @@ export const POST_VIDEOGAMES = "POST_VIDEOGAMES";
 
 export const getVideogames= ()=>{
     return async function(dispatch){
-        const infoServer = await axios.get('http://localhost:3001/videogames');
+        const infoServer = await axios.get('/videogames');
         const data= infoServer.data;
         dispatch({type:GET_VIDEOGAMES, payload: data});
     }
@@ -17,7 +17,7 @@ export const getVideogames= ()=>{
 
 export const getGenres= ()=>{
     return async function(dispatch){
-        const info = await axios.get('http://localhost:3001/genres');
+        const info = await axios.get('/genres');
         const data= info.data;
         dispatch({type: GET_GENRES, payload: data})
     }
@@ -25,7 +25,7 @@ export const getGenres= ()=>{
 
 export const getDetailVideogames= (id)=>{
     return async function(dispatch){
-        const infoServer = await axios.get(`http://localhost:3001/videogames/${id}`);
+        const infoServer = await axios.get(`/videogames/${id}`);
         const data= infoServer.data;
         dispatch({type:GET_DETAILVIDEOGAME, payload: data});
     }
@@ -36,7 +36,7 @@ export const postVideogames= (data)=>{
     console.log("ingreso1", dataJson)
     return async function(dispatch){
         console.log("ingreso2")
-        const result = await axios.post(`http://localhost:3001/videogames`, dataJson);
+        const result = await axios.post(`/videogames`, dataJson);
         console.log("Enviado")
         dispatch({type: POST_VIDEOGAMES, payload: result})
     }
